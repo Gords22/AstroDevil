@@ -1,0 +1,18 @@
+module.exports = (bot) => {
+bot.onMessage()
+bot.onInteractionCreate()
+bot.onApplicationCmdCreate()
+bot.onJoin()
+bot.onLeave()
+bot.onInviteCreate()
+bot.onInviteDelete()
+bot.onBanAdd()
+bot.onBanRemove()
+bot.onGuildJoin()
+bot.onGuildLeave()
+bot.onChannelCreate()
+bot.onChannelDelete()
+bot.onChannelPinsUpdate()
+bot.onChannelUpdate()
+bot.onMessageUpdate()
+}
