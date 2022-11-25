@@ -85,6 +85,7 @@ voice.onQueueEnd()
 
 const loader = new aoijs.LoadCommands(bot)
 loader.load(bot.cmd, "./comandos/")
+loader.load(bot.cmd, "./Interacciones/")
 
 loader.setColors({
   walking: ["blink", "dim", "fgWhite"],
