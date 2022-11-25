@@ -8,7 +8,7 @@ $createApplicationCommand[$guildID;int-hug;Abraza a un usuario \:D;true;CHAT_INP
     "required": true
 }]
 
-$createApplicationCommand[$guildID;int-kiss;Besa a un usuario \;\);true;CHAT_INPUT;{
+$createApplicationCommand[$guildID;int-kiss;Besa a un usuario \;);true;CHAT_INPUT;{
     "name": "usuario",
     "description": "Menciona a alguien",
     "type": 6,
