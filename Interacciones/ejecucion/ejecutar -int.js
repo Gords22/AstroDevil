@@ -1,0 +1,7 @@
+module.exports = {
+    name: "int hug",
+    type: "interaction",
+    prototype: "slash",
+    code: `$interactionReply[;{newEmbed:{title:$username[$interactionData[author.id]] le dio un abrazo a $username[$findMember[$interactionData[options.data[0].value]]]}{image:$randomText[https://nekocdn.com/images/ZxnDk7Sx.gif;https://nekocdn.com/images/_DKjv1J1.gif;https://nekocdn.com/images/i6wKzufP.gif;https://nekocdn.com/images/1BlXHF4R.gif;https://nekocdn.com/images/trYMVXTu.gif;https://nekocdn.com/images/84RVP9FR.gif;https://nekocdn.com/images/zJz37_q-.gif;https://nekocdn.com/images/6hgY2K1t.gif;https://nekocdn.com/images/8uYwL6G9.gif;https://nekocdn.com/images/7xSdtDj_.gif;https://nekocdn.com/images/rHWL1M78.gif;https://nekocdn.com/images/G28u_mVkK.gif;https://nekocdn.com/images/f_WTij-n.gif;https://nekocdn.com/images/xV5AuVLD.gif;https://nekocdn.com/images/osbqQHgU.gif;https://nekocdn.com/images/UqFzUna9.gif;https://nekocdn.com/images/H31aUh0pH.gif;https://nekocdn.com/images/_HPBDopl.gif;https://nekocdn.com/images/0bUSg7Vq.gif;https://nekocdn.com/images/brs_qFJSz.gif;https://nekocdn.com/images/rxjRvJmt.gif;https://nekocdn.com/images/y-1DCcK2.gifhttps://nekocdn.com/images/X6RLyO-P.gif]}{color:RANDOM}}]
+    $onlyIf[$findMember[$interactionData[options.data[0].value];false]!=;**⚠ | Ese usuario no existe**]`
+}
