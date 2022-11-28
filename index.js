@@ -42,7 +42,7 @@ const bot = new aoijs.AoiClient({
   prefix: ["$getServerVar[prefix]"],
   intents: "all",
   autoUpdate: false,
-  mobilePlataform: false,
+  mobilePlataform: true,
   sharding: true,
   events: {
     timeout: true, 
@@ -122,6 +122,27 @@ bot.onGuildJoin({
 "description": "Menciona a alguien",
 "type": 6,
 "required": false
+}]
+
+$createApplicationCommand[$guildID;int-hug;Abraza a un usuario;true;CHAT_INPUT;{
+  "name": "usuario",
+  "description": "Menciona a alguien",
+  "type": 6,
+  "required": true
+}]
+
+$createApplicationCommand[$guildID;int-kiss;Besa a un usuario;true;CHAT_INPUT;{
+  "name": "usuario",
+  "description": "Menciona a alguien",
+  "type": 6,
+  "required": true
+}]
+
+$createApplicationCommand[$guildID;int-slap;Cachetea a un usuario;true;CHAT_INPUT;{
+  "name": "usuario",
+  "description": "Menciona a alguien",
+  "type": 6,
+  "required": true
 }]
 $suppressErrors`
 })
