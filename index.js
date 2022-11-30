@@ -7,6 +7,7 @@ const express = require('express');
 const app = express();
 const port = 3000; 
 require("dotenv").config()
+const aoimongo = require("aoi.mongo")
 
 app.get('/', function (req, res) { 
 res.send('Hello World') 
@@ -58,10 +59,10 @@ const bot = new aoijs.AoiClient({
     commands: true,  
   },
   database: { 
-    db: require("dbdjs.db"),
-    type: "dbdjs.db", 
-    path: "./database/",
-    tables: ["main", "level"]
+    db: aoimongo,
+    type: "aoi.mongo", 
+    path: process.env.uri,
+    tables: ["main"]
   }
 })
 
