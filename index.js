@@ -220,13 +220,7 @@ return {
 bot.readyCommand({
  channel: '',
  code: `$log[$djseval[
- require("table").table([["Ping", "$pingms"], 
- ["Desarrollador", $userTag[$botOwnerID]],
- ["Bot", $userTag[$clientID]], 
- ["Comandos cargados", client.cmd.default.size],
- ["Ping de WebSocket", client.ws.ping+"ms"], 
- ["Version", "v$packageVersion"], 
- ["Node.js","$nodeVersion"]]);yes]]`
+ require("table").table([["Ping", "$pingms"], ["Desarrollador", $userTag[$botOwnerID]], ["Bot", $userTag[$clientID]], ["Comandos cargados", client.cmd.default.size], ["Ping de WebSocket", client.ws.ping+"ms"], ["Version", "v$packageVersion"], ["Node.js","$nodeVersion"]]);yes]]`
 })
 
 console.log(`Hello from Node.js ${process.version}!`)

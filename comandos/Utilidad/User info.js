@@ -2,8 +2,10 @@ module.exports = {
   name: "user-info",
   aliases: ["userinfo"],
   code: `$title[1;Informacion de Usuario]
-$color[1;RANDOM]
+$color[1;$getUserAccentColor[]]
 $thumbnail[1;$userAvatar[$findMember[$message]]]
+$addField[1;Tiene Banner?;$replaceText[$replaceText[$checkCondition[$getUserBanner[$findMember[$message]]!=null];false;No tiene banner personalizado (imagen abajo)];true;Si Tiene banner Personalizado (imagen abajo)];no]
+$addField[1;Color del Banner;]
 $addField[1;Roles del Usuario;$userRoles[$findMember[$message];$guildID;mention;, ];no]
 $addField[1;Fecha de creacion de la cuenta;$creationDate[$findMember[$message];date];no]
 $addField[1;Miembro desde?;$formatDate[$memberJoinedDate[$findMember[$message];$guildID];MM/DD/YYYY, hh:mm:ss A];no]
