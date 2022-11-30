@@ -116,38 +116,6 @@ files.forEach(x => {
  require(`./eventos/${x}`)(bot)
 }); 
 
-bot.onGuildJoin({
-  channel: "",
-  code: `$createApplicationCommand[$guildID;avatar;Manda el avatar de un usuario;true;CHAT_INPUT;{
-"name": "Usuario",
-"description": "Menciona a alguien",
-"type": 6,
-"required": false
-}]
-
-$createApplicationCommand[$guildID;int-hug;Abraza a un usuario;true;CHAT_INPUT;{
-  "name": "usuario",
-  "description": "Menciona a alguien",
-  "type": 6,
-  "required": true
-}]
-
-$createApplicationCommand[$guildID;int-kiss;Besa a un usuario;true;CHAT_INPUT;{
-  "name": "usuario",
-  "description": "Menciona a alguien",
-  "type": 6,
-  "required": true
-}]
-
-$createApplicationCommand[$guildID;int-slap;Cachetea a un usuario;true;CHAT_INPUT;{
-  "name": "usuario",
-  "description": "Menciona a alguien",
-  "type": 6,
-  "required": true
-}]
-$suppressErrors`
-})
-
 bot.functionManager.createCustomFunction({ 
   name: "$emojify", 
   type: "djs", code: async d => { 
