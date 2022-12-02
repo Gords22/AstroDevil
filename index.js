@@ -8,6 +8,8 @@ const app = express();
 const port = 3000; 
 require("dotenv").config()
 const aoimongo = require("aoi.mongo")
+let encode = "utf8"
+const fss = require('fs')
 
 app.get('/', function (req, res) { 
 res.send('Hello World') 
