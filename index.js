@@ -67,14 +67,6 @@ const voice = new aoijs.Voice(bot, {
    },
 });
 
-voice.onAudioError()
-voice.onTrackStart()
-voice.onTrackEnd()
-voice.onTrackPause()
-voice.onTrackResume()
-voice.onQueueStart()
-voice.onQueueEnd()
-
 const loader = new aoijs.LoadCommands(bot)
 loader.load(bot.cmd, "./comandos/")
 loader.load(bot.cmd, "./Interacciones/")
@@ -104,46 +96,8 @@ loader.setColors({
 
 const files = fss.readdirSync('./eventos').filter(file => file.endsWith('.js'))
 files.forEach(x => {
- require(`./eventos/${x}`)(bot)
+ require(`./eventos/${x}`)(bot, voice)
 }); 
-
-bot.functionManager.createCustomFunction({ 
-  name: "$emojify", 
-  type: "djs", code: async d => { 
-    const data = d.util.openFunc(d) 
-      const [args] = data.inside.splits 
-        if(!args) return d.aoiError.fnError(d,"custom",{ inside:data.inside }, "please provide text") 
-const specialCodes = { 
-  '0': ':zero:', 
-  '1': ':one:', 
-  '2': ':two:', 
-  '3': ':three:', 
-  '4': ':four:', 
-  '5': ':five:', 
-  '6': ':six:', 
-  '7': ':seven:', 
-  '8': ':eight:', 
-  '9': ':nine:', 
-  '#': ':hash:', 
-  '*': ':asterisk:', 
-  '?': ':grey_question:', 
-  '!': ':grey_exclamation:', 
-  ' ': ' ' 
-} 
-const text = args.toLowerCase().split('').map(letter => { 
-  if(/[a-z]/g.test(letter)) { 
-    return `:regional_indicator_${letter}:` 
-  } else if (specialCodes[letter]) { 
-    return `${specialCodes[letter]}` 
-  } 
-  return letter 
-}).join('') 
-  data.result = text 
-    return { 
-  code: d.util.setCode(data) 
-} 
-  } 
-})
 
 bot.functionManager.createCustomFunction({
   name: '$authorOnlyButton',
@@ -153,33 +107,9 @@ bot.functionManager.createCustomFunction({
 $addButton[{index};{label};{style};{customID}_$authorID;{disabled};{emoji}]`
 })
 
-bot.functionManager.createCustomFunction({
-  name: "$httpStatus",
-  type: "djs",
-  code: async d => {
- const data = d.util.openFunc(d)
- const [url] = data.inside.splits
- var request = require('axios');
-await request.get(url).then((response) => {
- data.result = response.status
- }).catch(function(error) {
- if(error.response) {
- data.result = error.response.status
- }
- else {
- data.result = error
- }
- })
-return {
- code: d.util.setCode(data)
- }
- }
- }) 
-
 bot.readyCommand({
  channel: '',
- code: `$log[$djseval[
- require("table").table([["Ping", "$pingms"], ["Desarrollador", $userTag[$botOwnerID]], ["Bot", $userTag[$clientID]], ["Comandos cargados", client.cmd.default.size], ["Ping de WebSocket", client.ws.ping+"ms"], ["Version", "v$packageVersion"], ["Node.js","$nodeVersion"]]);yes]]`
+ code: `$log[Estoy listo :D]`
 })
 
 console.log(`Hello from Node.js ${process.version}!`)

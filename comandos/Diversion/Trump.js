@@ -1,6 +1,8 @@
 module.exports = {
   name: "trump",
-  code: `$image[1;$jsonRequest[https://nekobot.xyz/api/imagegen?type=trumptweet&text=$uri[encode;$message];message;⚠️** | Oh oh a ocurrido un error**]]
+  code: `$description[1;Donald Trump a tweeteado algo!]
+$image[1;$jsonRequest[https://nekobot.xyz/api/imagegen?type=trumptweet&text=$uri[encode;$message];message]]
 $color[1;RANDOM]
-$addTimestamp[1;$dateStamp]`
+$addTimestamp[1;$dateStamp]
+$onlyIf[$message!=;**⚠️ | Escribe un mensaje**]`
 } 
