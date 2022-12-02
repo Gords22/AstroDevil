@@ -1,7 +1,7 @@
 module.exports = {
   name: "comment",
-  code: `$image[1;https://some-random-api.ml/canvas/youtube-comment?username=$uri[$username[$findMember[$message[1]]];encode]&avatar=$replaceText[$userAvatar[$findMember[$message[1]]];webp;png]&comment=$uri[$checkCondition[$messageSlice[1];encode]]
+  code: `$image[1;https://some-random-api.ml/canvas/youtube-comment?username=$uri[encode;$username[$authorID]]&avatar=$replaceText[$userAvatar[$authorAvatar];webp;png]&comment=$uri[encode;$message]]
 $color[1;RANDOM]
 $addTimestamp[1;$dateStamp]
-$onlyIf[$messageSlice[1]!=;⚠️** | Escribe un mensaje**]`
-} 
+$onlyIf[$message!=;⚠️** | Escribe un mensaje**]`
+}

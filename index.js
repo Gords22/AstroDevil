@@ -15,17 +15,6 @@ res.send('Hello World')
 
 app.listen(port, () => console.log(`Bot Listo en http://localhost:${port}`));
 
-let encode = "utf8"
-const fss = require('fs')
-function backup() {
- fss.writeFileSync('./db backup/db.sql', fss.readFileSync('./database/main/main_scheme_1.sql', {
- encode,
- undefined
- }), 
- {encoding: encode})
-}
-setInterval(backup, 60000)
-
 levels.setURL(process.env.uri)
 
 mongoose.connect(process.env.uri, {

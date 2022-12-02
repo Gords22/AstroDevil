@@ -1,31 +1,33 @@
 module.exports = {
     name: "connect4",
     code: `$djsEval[(async () => {
-let opponent = message.mentions.users.first()
-  
-const { Connect4 } = require('leaf-utils')
-  
-new Connect4({
-  message: message,
-  opponent: message.mentions.users.first(),
-  embed: {
-      title: 'Conecta 4',
-      color: 'RANDOM',
-    },
-    emojis: {
-      player1: '🔵',
-      player2: '🟡'
-    },
-    waitMessage: 'Esperando al oponente',
-    turnMessage: 'Es el turno de **{player}** | {emoji}',
-    winMessage: '¡**{winner}** gana el juego!',
-    gameEndMessage: 'El juego esta incompleto :/',
-    drawMessage: '¡Es un empate!',
-    othersMessage: 'No puedes usar los botones',
-    askMessage: 'Oye {opponent}, {challenger} te esta retando a un juego de Conecta 4!',
-    cancelMessage: 'Tu reto ah sido rechazado :(',
-    timeEndMessage: 'No se ah respondido al reto, El juego se ah cancelado',
-  }).startGame()
+      const { Connect4 } = require("leaf-utils");
+
+      await Connect4({
+          message: message,
+          client: client,
+          slash_command: false,
+          time: 300000,
+          opponent: message.mentions.users.first(),
+          embed: {
+              title: "Connect4",
+              color: "RED",
+          },
+          challenge: {
+              acceptButton: "Aceptar",
+              denyButton: "Rchazar",
+          },
+          emojis: {
+              player1: "🔴",
+              player2: "🟡",
+          },
+          noUser: "⚠️** | Menciona a un usuario**",
+          acceptMessage: "{{player}} te ha retado {{opponent}}",
+          cancelMessage: "{{opponent}} ah rechazado tu reto",
+          endMessage: "Reto no aceptado a tiempo!",
+          timeoutMessage: "Juego finalizado por inactividad",
+          authorOnly: "**⚠️ | Tu no puedes usar los botones**",
+      });
 })()]
 $onlyIf[$isBot[$mentioned[1]]!=true;⚠️** | No puedes juagar con bots**]
 $onlyIf[$mentioned[1]!=$authorID;⚠️** | Menciona a un usuario**]

@@ -1,28 +1,31 @@
 module.exports = {
     name: "snake",
     code: `$djsEval[(async () => {
-        const { Leafsnake } = require('leaf-utils')
+      const { Snake } = require("leaf-utils");
 
-new Leafsnake({
-message: message,
-embed: {
-title: 'Juego de Serpiente (snake)',
-timestamp: true,
-color: 'RANDOM',
-OverTitle: 'Juego Finalizado',
-},
-snake: { head: '🟩', body: '🟩', tail: '🟩', over: '💀' },
-          emojis: {
-            board: '⬛', 
-            food: '🍎',
-            up: '🔼', 
-            right: '▶️',
-            down: '🔽',
-            left: '◀️',
+      new Snake({
+          message: message,
+          slash_command: false,
+          snake: {
+              head: "🟢",
+              body: "🟩",
+              tail: "🟢",
+              over: "💀",
           },
-foods: ['🍎', '🍇', '🍊', '🍒'],
-stopButton: 'Detener',
-othersMessage: 'No puedes usar los botones',
-}).startGame();
+          emojis: {
+              board: "⬛",
+              food: "🍎",
+              up: "⬆️",
+              right: "➡️",
+              down: "⬇️",
+              left: "⬅️",
+          },
+          foods: ["🍎", "🍇", "🍊", "🍕", "🥕", "🥞"],
+          stopButton: {
+              stopLabel: "Detener",
+              stopStyle: "DANGER",
+          },
+          authorOnly: "**⚠️ | Solamente {{author}} puede usar los botones**",
+      }).startGame();
 })()]`
 }
