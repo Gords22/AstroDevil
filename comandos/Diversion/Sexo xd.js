@@ -1,7 +1,8 @@
 module.exports = {
-  name: "sexo",
-  aliases: ["setso","sepso","secso","setzo"],
+  name: "efhnesfhresghrkgnkjgnt",
   code: `$reply[$messageID;false]
-$randomText[<:Tohru:929180609421668402>;<:FUbu:929179040160563240>;<:konatasmugdark:929179419833155614>]`,
+si
+  $onlyIf[$checkContains[$message;sexo;setso;sepso;secso;setzo]!=false;]
+  $onlyIf[1+1!=2;]`,
   nonPrefixed: true
 }

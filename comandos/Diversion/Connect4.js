@@ -10,12 +10,12 @@ module.exports = {
           time: 300000,
           opponent: message.mentions.users.first(),
           embed: {
-              title: "Connect4",
+              title: "Connecta 4",
               color: "RED",
           },
           challenge: {
               acceptButton: "Aceptar",
-              denyButton: "Rchazar",
+              denyButton: "Rechazar",
           },
           emojis: {
               player1: "🔴",
