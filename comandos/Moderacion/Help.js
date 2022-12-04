@@ -34,8 +34,9 @@ $onlyIf[$interactionData[values[0]]==men1;]
   name: "menu", 
   prototype: "selectMenu", 
   code: `$interactionUpdate[;{newEmbed:{description:
-\`nuke   |   ping    |    ban
-unban  |   kick    |    clear\`}{color:RANDOM}{author: | Comandos de Moderacion:$userAvatar[$authorID]}{timestamp:ms}};{actionRow:{selectMenu:menu:📑 Encuentra lo que buscas aqui:1:1:no:{selectMenuOptions:Pagina Principal:men0:Regresa a la pagina Principal:false:<:setzofino:932084981637996634>}{selectMenuOptions:Diversion:men1:Lista de Comandos de Diversion:false:<a:risaXd:924825419377700924>}{selectMenuOptions:Moderacion:men2:Lista de Comandos de Moderacion:false:<a:catBan:924829707898351706>}{selectMenuOptions:Interaccion o Emociones:men3:Lista de Comandos de Interaccion:false:🤝}{selectMenuOptions:NSFW:men4:Lista de Comandos NSFW:false:<a:mmSetso:924830250267988059>}{selectMenuOptions:Utilidad:men5:Lista de Comandos de Utilidad:false:<a:11:852227236631412756>}{selectMenuOptions:Niveles:men6:Lista de Comandos de Niveles:false:<:level:959861289360977970>}}}]
+\`nuke         |   ping    |    ban
+unban        |   kick    |    clear
+set-welcome\`}{color:RANDOM}{author: | Comandos de Moderacion:$userAvatar[$authorID]}{timestamp:ms}};{actionRow:{selectMenu:menu:📑 Encuentra lo que buscas aqui:1:1:no:{selectMenuOptions:Pagina Principal:men0:Regresa a la pagina Principal:false:<:setzofino:932084981637996634>}{selectMenuOptions:Diversion:men1:Lista de Comandos de Diversion:false:<a:risaXd:924825419377700924>}{selectMenuOptions:Moderacion:men2:Lista de Comandos de Moderacion:false:<a:catBan:924829707898351706>}{selectMenuOptions:Interaccion o Emociones:men3:Lista de Comandos de Interaccion:false:🤝}{selectMenuOptions:NSFW:men4:Lista de Comandos NSFW:false:<a:mmSetso:924830250267988059>}{selectMenuOptions:Utilidad:men5:Lista de Comandos de Utilidad:false:<a:11:852227236631412756>}{selectMenuOptions:Niveles:men6:Lista de Comandos de Niveles:false:<:level:959861289360977970>}}}]
 $onlyIf[$interactionData[values[0]]==men2;] 
 `
 },{

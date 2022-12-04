@@ -20,7 +20,8 @@ bot.variables({
   levels: "$channelID",
   msglevel: "Felicidades (user.mention), Subiste al nivel (level)",
   chatbot: "false",
-  chatC: ""
+  chatC: "",
+  messageId: ""
 },'main');
 
 bot.variables({
