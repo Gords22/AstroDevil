@@ -10,7 +10,7 @@ $thumbnail[1;$authorAvatar]
 $addField[1;Servidor:;$serverName[$guildID];no]
 $addField[1;Mandado por:;$userTag;no]
 $addField[1;Hora de envio:;<t:$truncate[$divide[$dateStamp;1000]]:D>;no]
-$channelSendMessage[$channelID;**✅ | Tu reporte a sido enviado a mi equipo de soporte, puede ser o no que recibas un DM, Contestado por mi creador**;no]
+$channelSendMessage[$channelID;**✅ | Tu reporte a sido enviado a mi equipo de soporte, puede ser que recibas un DM, Contestado por mi creador**;no]
 $cooldown[5m;$replaceText[⚠️** | Puedes volver a usar este comando en \`%min%m, %sec%s\`**;0m;]]
 $onlyIf[$message!=;⚠️** | Escribe un reporte o bug**]
 

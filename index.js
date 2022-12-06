@@ -37,12 +37,11 @@ const bot = new aoijs.AoiClient({
   autoUpdate: false,
   mobilePlataform: true,
   sharding: true,
-  errorMessage: "**Oh-oh, ah ocurrido un error en este comando, se ah enviado el error a mi desarrollador**",
   events: {
     timeout: true,
     functionError: true
   },
-  suppressAllErrors: true,
+  suppressAllErrors: false,
   fetchInvites: { 
     enabled: false, 
     cacheInviters: false 
