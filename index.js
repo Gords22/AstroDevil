@@ -10,6 +10,7 @@ require("dotenv").config()
 const aoimongo = require("aoi.mongo")
 let encode = "utf8"
 const fss = require('fs')
+const { Nekobot } = require("nekobot-api")
 
 app.get('/', function (req, res) { 
 res.send('Hello World') 
@@ -36,12 +37,12 @@ const bot = new aoijs.AoiClient({
   autoUpdate: false,
   mobilePlataform: true,
   sharding: true,
+  errorMessage: "**Oh-oh, ah ocurrido un error en este comando, se ah enviado el error a mi desarrollador**",
   events: {
-    timeout: true, 
-    errorMessage: true,
+    timeout: true,
     functionError: true
   },
-  suppressAllErrors: false,
+  suppressAllErrors: true,
   fetchInvites: { 
     enabled: false, 
     cacheInviters: false 

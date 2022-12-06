@@ -33,6 +33,7 @@
     "megadb": "^3.4.0",
     "mongoose": "^6.7.0",
     "mysql": "^2.18.1",
+    "nekobot-api": "^2.1.0",
     "opusscript": "^0.0.8",
     "table": "^6.8.1"
   },
