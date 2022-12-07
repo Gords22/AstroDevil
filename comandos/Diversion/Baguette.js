@@ -1,10 +1,13 @@
 module.exports = {
   name: "baguette",
-  code: `$djsEval[const { api } = require("./index.js")
-(async () => {
-const image = await api.generate("baguette", { image: "$userAvatar[$findMember[$message]]"})
-return image
-})()]
-$addTimestamp[1;$dateStamp]
+  code: `$image[1;$djsEval[
+const { NekoBot } = require("nekobot-api")
+const api = new NekoBot();
+
+;(async () => {
+  const image = await api.generate("baguette", { url: "$replaceText[$userAvatar[$findMember[$message]];webp;png]"});
+  return image;
+})();yes]]
+$addTimeStamp[1]
 $color[1;RANDOM]`
 } 

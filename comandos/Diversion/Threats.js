@@ -1,6 +1,14 @@
 module.exports = {
   name: "threats",
-  code: `$image[1;$jsonRequest[https://nekobot.xyz/api/imagegen?type=threats&url=$replaceText[$userAvatar[$findMember[$message]];webp;png];message;⚠️** | Oh oh ah ocurrido un error**]]
-$color[1;RANDOM]
-$addTimestamp[1;$dateStamp]`
+  code: `$title[1;las 3 mayores amenazas de la sociedad]
+  $image[1;$djsEval[
+    const { NekoBot } = require("nekobot-api")
+    const api = new NekoBot();
+      
+    ;(async () => {
+      const image = await api.generate("threats", { url: "$replaceText[$userAvatar[$findMember[$message]];webp;png]" });
+      return image;
+    })();yes]]
+    $color[1;RANDOM]
+    $addTimeStamp[1]`
 } 

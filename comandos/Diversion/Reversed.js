@@ -1,8 +1,11 @@
 module.exports = {
   name: "reverse",
-  code: `$title[1;Texto revertido]
-$addField[1;Texto revertido:;$jsonRequest[https://luminabot.xyz/api/text/reverse?text=$uri[$message;encode];reversed;⚠️** Oh oh a ocurrido un error**];no]
-$addField[1;Texto original:;$message;no]
-$color[1;RANDOM]
-$addTimestamp[1;$dateStamp]`
+  code: `$reply[$messageID;no]
+$advancedTextSplit[$djsEval[
+const Lumina = require('lumina-wrapper.js')
+const lms = new Lumina()
+
+lms.get("text", "reverse", { "text": \`$message\` }).then((res) => {
+  return res
+});yes];';2]`
 }
