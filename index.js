@@ -5,7 +5,7 @@ const mongoose = require("mongoose")
 const megadb = require("megadb")
 const express = require('express');
 const app = express();
-const port = 3000; 
+const port = process.env.PORT; 
 require("dotenv").config()
 const aoimongo = require("aoi.mongo")
 let encode = "utf8"
