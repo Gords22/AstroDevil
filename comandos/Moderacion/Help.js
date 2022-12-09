@@ -1,12 +1,14 @@
 module.exports = [{
   name: "help", 
-  code: `$reply[$messageID;no]
-$title[1;❔ | Comandos de Ayuda]
-$description[1;Por Favor Selecciona una de las Categorias]
-$color[1;0000ff]
-$image[1;https://i.ibb.co/8jvttr8/GS20220105203811.gif]
-$addTimeStamp[1]
-$addSelectMenu[1;menu;📑 Encuentra lo que buscas aqui;1;1;no;Pagina Principal:Regresa a la pagina Principal:men0_$authorID::$customEmoji[setzofino;808808003645079552];Diversion:Lista de Comandos de Diversion:men1_$authorID::$customEmoji[risaXd;808808003645079552];Moderacion:Lista de Comandos de Moderacion:men2_$authorID::$customEmoji[catBan;808808003645079552];Interaccion o Emociones:Lista de Comandos de Interaccion:men3_$authorID::🤝;NSFW:Lista de comandos NSFW:men4_$authorID::$customEmoji[mmSetso;808808003645079552];Utilidad:Lista de Comandos de Utilidad:men5_$authorID::$customEmoji[11;808808003645079552];Niveles:Lista de Comandos de Niveles:men6_$authorID::$customEmoji[level;808808003645079552]]
+  code: `$editMessage[$get[ID];{
+    "embeds": "{newEmbed:{description:Menu cerrado!}{color:0000ff}{title:❔ | Comandos de Ayuda}{timestamp:ms}}",
+    "components": "{actionRow:{selectMenu:menu:Tiempo Agotado ⏱️:1:1:yes:{selectMenuOptions:Pagina Principal:men0_$authorID:Regresa a la pagina Principal:false:<:setzofino:932084981637996634>}{selectMenuOptions:Diversion:men1_$authorID:Lista de Comandos de Diversion:false:<a:risaXd:924825419377700924>}{selectMenuOptions:Moderacion:men2_$authorID:Lista de Comandos de Moderacion:false:<a:catBan:924829707898351706>}{selectMenuOptions:Interaccion o Emociones:men3_$authorID:Lista de Comandos de Interaccion:false:🤝}{selectMenuOptions:NSFW:men4_$authorID:Lista de Comandos NSFW:false:<a:mmSetso:924830250267988059>}{selectMenuOptions:Utilidad:men5_$authorID:Lista de Comandos de Utilidad:false:<a:11:852227236631412756>}{selectMenuOptions:Niveles:men6_$authorID:Lista de Comandos de Niveles:false:<:level:959861289360977970>}}}"
+  }]
+  $wait[10s]
+  $let[ID;$sendMessage[{
+  "embeds": "{newEmbed:{description:Por Favor Selecciona una de las Categorias}{color:0000ff}{title:❔ | Comandos de Ayuda}{image:https://i.ibb.co/8jvttr8/GS20220105203811.gif}{timestamp:ms}}",
+  "components": "{actionRow:{selectMenu:menu:📑 Encuentra lo que buscas aqui:1:1:no:{selectMenuOptions:Pagina Principal:men0_$authorID:Regresa a la pagina Principal:false:<:setzofino:932084981637996634>}{selectMenuOptions:Diversion:men1_$authorID:Lista de Comandos de Diversion:false:<a:risaXd:924825419377700924>}{selectMenuOptions:Moderacion:men2_$authorID:Lista de Comandos de Moderacion:false:<a:catBan:924829707898351706>}{selectMenuOptions:Interaccion o Emociones:men3_$authorID:Lista de Comandos de Interaccion:false:🤝}{selectMenuOptions:NSFW:men4_$authorID:Lista de Comandos NSFW:false:<a:mmSetso:924830250267988059>}{selectMenuOptions:Utilidad:men5_$authorID:Lista de Comandos de Utilidad:false:<a:11:852227236631412756>}{selectMenuOptions:Niveles:men6_$authorID:Lista de Comandos de Niveles:false:<:level:959861289360977970>}}}"
+};yes]]
 `
 },{
   type: "interaction",
@@ -34,7 +36,7 @@ aki-animal    |  triggered |  pixelate
 sepia         |  invert    |  blur
 passed        |  communist |  ascii
 clyde         |  horny     |  trump
-magik         |  \`}{color:RANDOM}{author: | Comandos de Diversion:$authorAvatar}{timestamp:ms}};{actionRow:{selectMenu:menu:📑 Encuentra lo que buscas aqui:1:1:no:{selectMenuOptions:Pagina Principal:men0_$authorID:Regresa a la pagina Principal:false:<:setzofino:932084981637996634>}{selectMenuOptions:Diversion:men1_$authorID:Lista de Comandos de Diversion:false:<a:risaXd:924825419377700924>}{selectMenuOptions:Moderacion:men2_$authorID:Lista de Comandos de Moderacion:false:<a:catBan:924829707898351706>}{selectMenuOptions:Interaccion o Emociones:men3_$authorID:Lista de Comandos de Interaccion:false:🤝}{selectMenuOptions:NSFW:men4_$authorID:Lista de Comandos NSFW:false:<a:mmSetso:924830250267988059>}{selectMenuOptions:Utilidad:men5_$authorID:Lista de Comandos de Utilidad:false:<a:11:852227236631412756>}{selectMenuOptions:Niveles:men6_$authorID:Lista de Comandos de Niveles:false:<:level:959861289360977970>}}}]
+magik         |  emojify   |  reverse\`}{color:RANDOM}{author: | Comandos de Diversion:$authorAvatar}{timestamp:ms}};{actionRow:{selectMenu:menu:📑 Encuentra lo que buscas aqui:1:1:no:{selectMenuOptions:Pagina Principal:men0_$authorID:Regresa a la pagina Principal:false:<:setzofino:932084981637996634>}{selectMenuOptions:Diversion:men1_$authorID:Lista de Comandos de Diversion:false:<a:risaXd:924825419377700924>}{selectMenuOptions:Moderacion:men2_$authorID:Lista de Comandos de Moderacion:false:<a:catBan:924829707898351706>}{selectMenuOptions:Interaccion o Emociones:men3_$authorID:Lista de Comandos de Interaccion:false:🤝}{selectMenuOptions:NSFW:men4_$authorID:Lista de Comandos NSFW:false:<a:mmSetso:924830250267988059>}{selectMenuOptions:Utilidad:men5_$authorID:Lista de Comandos de Utilidad:false:<a:11:852227236631412756>}{selectMenuOptions:Niveles:men6_$authorID:Lista de Comandos de Niveles:false:<:level:959861289360977970>}}}]
 $onlyIf[$advancedTextSplit[$interactionData[values[0]];_;2]==$interactionData[author.id];{
   "content": "⚠️** | Tu no puedes usar el menu**",
   "ephemeral": true,

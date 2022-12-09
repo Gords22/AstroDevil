@@ -10,9 +10,6 @@ require("dotenv").config()
 const aoimongo = require("aoi.mongo")
 let encode = "utf8"
 const fss = require('fs')
-const { NekoBot } = require("nekobot-api")
- 
-const api = new NekoBot()
 
 app.get('/', function (req, res) { 
 res.send('Hello World') 

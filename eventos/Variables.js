@@ -21,7 +21,8 @@ bot.variables({
   msglevel: "Felicidades (user.mention), Subiste al nivel (level)",
   chatbot: "false",
   chatC: "",
-  messageId: ""
+  messageId: "",
+  id: ""
 },'main');
 
 bot.variables({

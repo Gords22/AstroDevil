@@ -1,9 +1,7 @@
 module.exports = [{
   name: "set welcome",
   aliases: ["welcome","set-welcome"],
-  code: `$setTimeout[welcomer;3m;{
-    "messageId": "$get[msgId]"
-  };false;false]
+  code: `$setTimeout[welcomer;3m;{"messageId":"$get[msgId]"};false;false]
 $setServerVar[messageId;$get[msgId]]
 $let[msgId;$sendMessage[{
   "embeds": "{newEmbed:{title:Configuracion de Bienvenida}{description:Que deseas configurar?}{footer:Selecciona un Boton}{color:RANDOM}}",
