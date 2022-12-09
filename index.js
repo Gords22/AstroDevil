@@ -57,14 +57,14 @@ const bot = new aoijs.AoiClient({
 })
 
 const voice = new aoijs.Voice(bot, {
+  soundcloud: {
+    clientId: process.env.cloud
+  },
   cache: {
     cacheType: "Memory",
     enabled: true,
   },
-  soundcloud : {
-     likeTrackLimit : 200
-   },
-});
+},false);
 
 const loader = new aoijs.LoadCommands(bot)
 loader.load(bot.cmd, "./comandos/")
